@@ -1,0 +1,466 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* HOST */
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100dvh;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+/* PAGE */
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background: #dcecf2;
+}
+
+/* HEADER */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  min-height: 64px;
+
+  padding: 0.65rem 1.25rem;
+
+  background: white;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/* LOGO */
+
+.logo {
+  flex: 0 0 auto;
+
+  margin: 0;
+
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+}
+
+/* MAIN NAV */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+
+  flex: 1;
+
+  gap: 0.25rem;
+}
+
+/* HEADER BUTTONS */
+
+.site-header button {
+  padding: 0.6rem 0.8rem;
+
+  border: 0;
+  background: transparent;
+
+  font: inherit;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.site-header button:hover {
+  background: rgba(0, 0, 0, 0.05);
+
+  border-radius: 8px;
+}
+
+/* ACTIVE NAV */
+
+.nav-link.active {
+  font-weight: 600;
+
+  border-bottom: 2px solid #222;
+  border-radius: 0;
+}
+
+/* HEADER ACTIONS */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 0.4rem;
+}
+
+/* ICON BUTTON */
+
+.icon-button {
+  display: grid;
+  place-items: center;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  font-size: 1rem;
+}
+
+/* PASSPORT BUTTON */
+
+.passport-button {
+  border: 1px solid #d3d3d3 !important;
+  border-radius: 8px !important;
+
+  background: white !important;
+}
+
+/* MAP */
+
+.map-shell {
+  position: relative;
+
+  min-height: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #dcecf2;
+}
+
+/* SVG MAP */
+
+.taniti-map {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background: #dcecf2;
+
+  cursor: grab;
+
+  touch-action: none;
+  user-select: none;
+}
+
+.taniti-map:active {
+  cursor: grabbing;
+}
+
+/* ISLAND */
+
+.island-base {
+  fill: #d7dfce;
+
+  stroke: white;
+  stroke-width: 0.18;
+
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+}
+
+/* MAP CATEGORIES */
+
+.map-categories {
+  position: absolute;
+  z-index: 20;
+
+  top: 1rem;
+  left: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.3rem;
+
+  max-width: calc(100% - 2rem);
+
+  padding: 0.45rem;
+
+  overflow-x: auto;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  scrollbar-width: none;
+}
+
+.map-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.map-categories button {
+  flex: 0 0 auto;
+
+  padding: 0.65rem 0.9rem;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  font: inherit;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.map-categories button:hover {
+  background: #eeeeee;
+}
+
+/* COMPASS */
+
+.compass {
+  position: absolute;
+  z-index: 20;
+
+  top: 5.8rem;
+  left: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: white;
+
+  border: 1px solid #d4d4d4;
+  border-radius: 50%;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.compass span {
+  line-height: 1;
+
+  font-size: 0.75rem;
+}
+
+.compass small {
+  margin-top: 0.15rem;
+
+  font-size: 0.6rem;
+}
+
+/* ZOOM CONTROLS */
+
+.zoom-controls {
+  position: absolute;
+  z-index: 20;
+
+  top: 9rem;
+  left: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.zoom-controls button {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 0;
+  border-bottom: 1px solid #dddddd;
+
+  background: white;
+
+  font-size: 1.35rem;
+
+  cursor: pointer;
+}
+
+.zoom-controls button:last-child {
+  border-bottom: 0;
+}
+
+.zoom-controls button:hover {
+  background: #eeeeee;
+}
+
+.reset-button {
+  font-size: 1rem !important;
+}
+
+/* MAP NOTE */
+
+.map-note {
+  position: absolute;
+  z-index: 20;
+
+  right: 1rem;
+  bottom: 1rem;
+
+  margin: 0;
+
+  padding: 0.45rem 0.7rem;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+
+  color: #555;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .site-header {
+    gap: 0.6rem;
+
+    min-height: 58px;
+
+    padding: 0.55rem 0.7rem;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+    letter-spacing: 0.12rem;
+  }
+
+  .main-nav {
+    flex: 1;
+  }
+
+  .site-header button {
+    padding: 0.45rem 0.55rem;
+
+    font-size: 0.82rem;
+  }
+
+  .icon-button {
+    min-width: 36px;
+    min-height: 36px;
+
+    padding: 0.35rem !important;
+  }
+
+  .passport-button {
+    font-size: 0.75rem !important;
+  }
+
+  .header-actions {
+    gap: 0.15rem;
+  }
+
+  .map-categories {
+    top: 0.7rem;
+    left: 0.7rem;
+
+    max-width: calc(100% - 1.4rem);
+
+    padding: 0.35rem;
+  }
+
+  .map-categories button {
+    padding: 0.55rem 0.7rem;
+
+    font-size: 0.8rem;
+  }
+
+  .compass {
+    top: 5.1rem;
+    left: 0.75rem;
+
+    width: 38px;
+    height: 38px;
+  }
+
+  .zoom-controls {
+    top: 8.1rem;
+    left: 0.75rem;
+  }
+
+  .zoom-controls button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .map-note {
+    right: 0.7rem;
+    bottom: 0.7rem;
+
+    font-size: 0.65rem;
+  }
+
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+
+  .site-header {
+    gap: 0.4rem;
+  }
+
+  .logo {
+    font-size: 1.05rem;
+  }
+
+  .main-nav button {
+    font-size: 0.78rem;
+  }
+
+  .passport-button {
+    padding: 0.4rem 0.5rem !important;
+  }
+
+  .map-categories {
+    border-radius: 10px;
+  }
+
+  .map-categories button {
+    font-size: 0.75rem;
+  }
+
+}
