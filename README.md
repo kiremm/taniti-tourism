@@ -1,59 +1,38 @@
-# TanitiTourism
+# Taniti Tourism — Interactive Visitor Guide
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Educational WGU UX / Software Engineering prototype for a fictional island. **Work in progress; not a production service or a verified AWS deployment.**
 
-## Development server
+## Current source
 
-To start a local development server, run:
+- Angular 21 application with an SVG conceptual island map.
+- TypeScript zoom, pan and reset handlers.
+- Visible navigation, category, search, passport and menu affordances. Some controls are placeholders, not complete visitor workflows.
+- No claim of real business locations, live transportation, prices or routes.
 
-```bash
-ng serve
+## Try locally
+
+```sh
+git clone https://github.com/kiremm/taniti-tourism.git
+cd taniti-tourism
+npm ci
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Run `npm run build` and `npm test` to check the build and tests. **Passing tests have not been verified.** The existing starter test still expects the heading `Hello, taniti-tourism`, while the current UI uses `TANITI`; it should be updated before claiming test coverage.
 
-## Code scaffolding
+## Cloud engineering learning plan (not completed)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Verify local build, required UX interactions and mobile behavior.
+2. Add reviewed GitHub Actions build/test checks; document one failed workflow and its correction.
+3. Compare GitHub Pages, AWS Amplify, and private S3 with CloudFront OAC for hosting/cost/security.
+4. If safe and justified, deploy a demo and verify HTTPS, assets and routing. AWS hosting is optional, not mandatory.
+5. Investigate one controlled failure; document logs, cause, recovery and prevention.
+6. Publish an accurate architecture, deployment README and case study identifying human work, AI assistance, tests and limitations.
 
-```bash
-ng generate component component-name
-```
+Do not assume infrastructure templates prove a real AWS deployment. Do not provision billable AWS resources before verifying current pricing, account eligibility, MFA, least privilege, alerts and teardown.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Scope
 
-```bash
-ng generate --help
-```
+Complete the existing WGU visitor requirements before expanding infrastructure. Avoid unnecessary accounts, backends, GPS, QR systems or fictional claims about real-world services.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+References: [Angular deployment](https://angular.dev/tools/cli/deployment) · [GitHub Actions](https://docs.github.com/en/actions) · [CloudFront OAC](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
